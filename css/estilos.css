@@ -1,0 +1,166 @@
+/* font-family 'Roboto', sans-serif; */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* estos es para especificar los altos y anchos de acuerdo el navegador */
+}
+
+body{
+    background: fff;
+    font-family: 'Roboto',sans-serif;
+    font-size: 16px;
+}
+.contenedor{
+    width: 90%;
+    /* el resto 10% es para margenes */
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+/*----------------------- HEADER------------------- */
+
+header{
+    background: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    max-height: 600px;
+}
+header .menu{
+    margin: 40px 0;
+    /* margin hacia vertical de 40px y horizaontal de 0 */
+    text-align: right;
+}
+
+header .menu a {
+    margin:0 20px;
+    color:white;
+    padding-bottom: 9px;
+    font-size: 1em;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    /* lo agregamos para que lo tome al tomar el hover no haga salto */
+}
+
+header .menu a:hover{
+    border-bottom: 2px solid white;
+}
+
+header .contenedor-nombre{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 100px 0;
+}
+header .contenedor-nombre .nombrelogo{
+    /* border: 2px  solid white; */
+    display: inline-block;
+    text-align: center;
+    padding: 20px 60px;
+}
+
+header .contenedor-nombre .nombrelogo h1,
+header .contenedor-nombre .nombrelogo h3{
+    color: white;
+    margin:0;
+}
+header .contenedor-nombre .nombrelogo h1{
+    font-size: 4em;
+    }
+
+header .contenedor-nombre .nombrelogo h3{
+margin: 30px 0;
+}
+/* --------------CATEGORIAS----------- */
+
+.categorias {
+    background: url(../img/fondo2.jpg);
+}
+.categorias .contenedor {
+    display: flex;
+    flex-direction: row; 
+}
+.categorias .contenedor .campo{
+    text-align: center;
+    border: 2px solid black;
+    margin: 20px;
+}
+#Descubre{
+    background: #f1bf5e;
+}
+#Agenda{
+background:#ff6160;
+}
+#Paquetes{
+background: #536db7;
+}
+/* --------------FOOTER------------- */
+footer .contactos{
+    padding: 60px 0;
+    background: #1f3e75;
+}
+
+footer .contactos .titulo{
+    font-size: 34px;
+    line-height: 34px;
+    text-align: center;
+    color: black;
+}
+
+footer .contactos .formulario{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+
+}
+
+footer .contactos .formulario input[type="text"] ,
+footer .contactos .formulario input[type="email"],
+footer .contactos .formulario textarea
+{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-size: 20px;
+}
+footer .contactos .formulario input[type="text"] ,
+footer .contactos .formulario input[type="email"] {
+    width: 49%;
+    margin-bottom: 15px;
+}
+
+footer .contactos .formulario textarea{
+    width: 100%;
+    height: 100px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 300px;
+    max-height: 100px;
+    margin-bottom: 15px;
+    
+}
+
+footer .contactos .formulario .botonenviar{
+    margin: auto;
+    background:#f1bf5e ;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 40px;
+}
+footer .contactos .formulario .botonenviar:hover{
+    background:#f1bf6e ;
+}
+footer .redes{
+    background: #1e2b38;
+    padding: 60px 0;
+}
+footer .redes a{
+    text-align: center;
+    padding: 15px;
+}
+
