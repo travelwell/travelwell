@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login travel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+
+</head>
+
+<body class="bodylogin">
+
+
+    <div class="formulariologin">
+        <h1 class="titulologin">INICIAR SESIÓN</h1>
+
+        <label id="usuario" for="" class="letra"><strong>Usuario:</strong></label>
+        <br>
+        <br>
+        <input  name="usuario" type="text" id="txusuario" placeholder="ingrese su usuario">
+        <br>
+        
+        <label for="" class="letra"><strong>Contraseña:</strong></label>
+        <br>
+        <br>
+        <input  name="contraseña" type="password" id="txcontraseña" placeholder="ingrese su contraseña">
+        <br>
+        <button type="button" onclick="login()" class="botonenviar"><strong>INICIAR</strong></button>
+        <button type="button" onclick="regresar()" class="botonenviar" id="regresar"><strong>REGRESAR</strong></button>
+    </div>
+
+
+
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <!-- 
+        agregamos el script genereal  -->
+    <script src="../public/js/index.js"></script>
+</body>
+
+</html>

@@ -12,6 +12,11 @@ body{
     font-family: 'Roboto',sans-serif;
     font-size: 16px;
 }
+.bodylogin{
+    background: url(../img/fondo.jpg);
+    font-family: 'Roboto',sans-serif;
+    font-size: 16px;
+}
 .contenedor{
     width: 90%;
     /* el resto 10% es para margenes */
@@ -118,9 +123,7 @@ justify-content: space-between;
 
 }
 
-footer .contactos .formulario input[type="text"] ,
-footer .contactos .formulario input[type="email"],
-footer .contactos .formulario textarea
+footer .contactos  input 
 {
     border: 2px solid black;
     border-radius: 5px;
@@ -128,31 +131,20 @@ footer .contactos .formulario textarea
     font-size: 20px;
     font-size: 20px;
 }
-footer .contactos .formulario input[type="text"] ,
-footer .contactos .formulario input[type="email"] {
+footer .contactos  input{
     width: 49%;
     margin-bottom: 15px;
 }
 
-footer .contactos .formulario textarea{
-    width: 100%;
-    height: 100px;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 300px;
-    max-height: 100px;
-    margin-bottom: 15px;
-    
-}
-
-footer .contactos .formulario .botonenviar{
+ .botonenviar{
     margin: auto;
     background:#f1bf5e ;
     border: none;
     border-radius: 5px;
     padding: 15px 40px;
+    margin-left: 200px;
 }
-footer .contactos .formulario .botonenviar:hover{
+ .botonenviar:hover{
     background:#f1bf6e ;
 }
 footer .redes{
@@ -163,4 +155,51 @@ footer .redes a{
     text-align: center;
     padding: 15px;
 }
+
+/* estilos login */
+.formulariologin h1{
+    text-align: center;
+}
+/* .formulariologin label,input{
+    margin-left: 120px;    
+} */
+
+.formulariologin  label{
+    margin-bottom: 30px;
+}
+.formulariologin .botonenviar{
+margin-left:150px ;
+margin-bottom: 20px;
+}
+#regresar{
+    margin-left:140px ;
+    margin-bottom: 20px;
+    }
+
+.formulariologin{
+    width: 500px;
+    height: 470px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    background: #A7A5A5;
+    border: 2px solid black;
+    border-radius: 5%;
+    box-shadow: 7px 13px 37px rgb(197, 189, 189);
+}
+.formulariologin  input 
+{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-size: 20px;
+
+
+}
+.formulariologin  input{
+    width: 49%;
+    margin-bottom: 15px;
+}
+
 

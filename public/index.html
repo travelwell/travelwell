@@ -20,16 +20,16 @@
                 <a href="">Inicio</a>
                 <a href="">Nosotros</a>
                 <a href="">Galeria</a>
-                <a href="">Iniciar sesión</a>
+                <a href="login.html">Iniciar sesión</a>
             </nav>
 
             <div class="contenedor-nombre">
                 <div class="nombrelogo">
-                   
+
                     <h3>Conoce el caquetá</h2>
                         <h1>TRAVEL WELL</h1>
-                    <h3>Guia del turista</h2>
-                    <!-- <img src="./img/travel.png" alt="" width="100px" height="80px"> -->
+                        <h3>Guia del turista</h2>
+                            <!-- <img src="./img/travel.png" alt="" width="100px" height="80px"> -->
                 </div>
             </div>
         </div>
@@ -61,26 +61,36 @@
     <footer>
 
         <section class="contactos">
-            <div class="contenedor">
-            <h3 class="titulo">Contacto</h3>
-            <form action="" class="formulario">
-                <input type="text" placeholder="nombre" name="nombre" required>
-                <input type="email" placeholder="correo" name="email" required>
-                <textarea class="area" name="mensaje" placeholder="escribenos tu inquietud porfavor"></textarea>
-                <input class="botonenviar" type="submit" value="Enviar">
-            </form>
+            <div class="contenedor" class="formulario">
+                <h3 class="titulo">Registro</h3>
+                <!-- <form  class="formulario"> -->
+                    <input type="text" placeholder="nombre" name="nombre" required id="nombres">
+                    <input type="email" placeholder="correo" name="email" required id="correos">
+                    <input type="password" placeholder="contraseña" name="contra" id="contraseñas">
+                    <br>
+                    <button  id="btnagregar" onclick = "agregardatos()" class="botonenviar">REGISTRAR</button>
+                    
+                <!-- </form> -->
             </div>
         </section>
-       <section class="redes">
-           <div class="contenedor">
-               <a href="" class="Facebook"><i class="fa fa-facebook-official" ></i></a>
-               <a href="" class="youtube"><i class="fa fa-youtube" ></i></a>
-               <a href="" class="whatssatp"><i class="fa fa-whatsapp" ></i></a>
-           </div>
-       </section>
-
+        <section>
+            
+        </section>
+        <section class="redes">
+            <div class="contenedor">
+                <a href="" class="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="" class="youtube"><i class="fa fa-youtube"></i></a>
+                <a href="" class="whatssatp"><i class="fa fa-whatsapp"></i></a>
+            </div>
+        </section>
 
     </footer>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <!-- 
+    agregamos el script genereal  -->
+    <script src="../public/js/index.js"></script>
 </body>
 
 </html>
