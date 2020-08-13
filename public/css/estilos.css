@@ -104,6 +104,11 @@ background:#ff6160;
 background: #536db7;
 }
 /* --------------FOOTER------------- */
+
+footer h1{
+    text-align: center;
+    color: aliceblue;
+}
 footer .contactos{
     padding: 60px 0;
     background: #1f3e75;
