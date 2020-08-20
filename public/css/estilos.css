@@ -40,6 +40,7 @@ header .menu{
     text-align: right;
 }
 
+
 header .menu a {
     margin:0 20px;
     color:white;
@@ -50,6 +51,7 @@ header .menu a {
     border-bottom: 2px solid transparent;
     /* lo agregamos para que lo tome al tomar el hover no haga salto */
 }
+
 
 header .menu a:hover{
     border-bottom: 2px solid white;
@@ -88,26 +90,50 @@ margin: 30px 0;
 .categorias .contenedor {
     display: flex;
     flex-direction: row; 
+    
 }
-.categorias .contenedor .campo{
-    text-align: center;
-    border: 2px solid black;
-    margin: 20px;
+.btn btn-primary{
+    
 }
+
 #Descubre{
     background: #f1bf5e;
+    border: 2px solid black;
+    text-align: center;
+    margin: 20px;
+    margin-top: 50px;
+    padding: 40px;
+    color: black;
 }
 #Agenda{
 background:#ff6160;
+border: 2px solid black;
+text-align: center;
+margin: 20px;
+margin-top: 50px;
+padding: 40px;
+color: black;
+
 }
 #Paquetes{
 background: #536db7;
+border: 2px solid black;
+text-align: center;
+margin: 20px;
+margin-top: 50px;
+padding: 40px;
+color: black;
+
 }
 /* --------------FOOTER------------- */
 
 footer h1{
     text-align: center;
     color: aliceblue;
+}
+.textofooter{
+    color: aliceblue;
+    text-align: center;
 }
 footer .contactos{
     padding: 60px 0;
@@ -207,4 +233,23 @@ margin-bottom: 20px;
     margin-bottom: 15px;
 }
 
+/* estilos nosotros */
 
+.informacionpro{
+    /* background: #536db7; */
+    display: flex;
+    flex-direction: row;
+}
+.informacionpro .informacion{
+    margin: 45px;
+    margin-top: 80px;
+}
+ .otroheader{
+    background:#1e2b38;
+    max-height: 90px;
+} 
+
+/* paquetes estilos */
+#fondojumbo {
+    background: url(../img/fondo.jpg);
+}

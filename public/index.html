@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travell well</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
@@ -20,8 +20,8 @@
         <div class="contenedor">
             <nav class="menu">
                 <a href="">Inicio</a>
-                <a href="">Nosotros</a>
-                <a href="">Galeria</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="galeria.html">Galeria</a>
                 <a href="login.html">Iniciar sesión</a>
             </nav>
 
@@ -43,61 +43,48 @@
 
 
 
-            <div class="campo" id="Descubre">
-                <h1>Descubre</h1>
-                <p>ver mapa interactivo con lugares a Descubrir</p>
+            <div>
+                <button type="button" class="btn btn-primary" id="Descubre"><strong>Descubre</strong>
+                    <br> ver mapa interactivo con lugares a descubrir
+                </button>
             </div>
-            <div class="campo" id="Agenda">
-                <h1>Agenda</h1>
-                <p>Administra tiempo y recursos con la agenda interactiva</p>
+
+            <div>
+                <button type="button" class="btn btn-primary" id="Agenda"><strong>Ver sitios</strong>
+                    <br> Observa los sitios que hemos encontrado como posibles destinos a tu viaje
+                </button>
             </div>
-            <div class="campo" id="Paquetes">
-                <h1>Paquetes</h1>
-                <p>Descubre paquetes y precios turisticos</p>
+
+            <div>
+                <button onclick="abrirpaquetes()" type="button" class="btn btn-primary" id="Paquetes"><strong>Agenda</strong>
+                    <br> Administra tiempo y recursos con la agenda interactiva
+                </button>
             </div>
+
 
         </div>
 
     </section>
 
     <footer>
-        <h1>Todos los derechos reservados</h1>
+       
 
         <section class="contactos">
             <div class="contenedor" class="formulario">
-                <h3 class="titulo">Registro</h3>
+                <h3 class="titulo">REGISTRO</h3>
                 <!-- <form  class="formulario"> -->
-                    <input type="text" placeholder="nombre" name="nombre" required id="nombres">
-                    <input type="email" placeholder="correo" name="email" required id="correos">
-                    <input type="password" placeholder="contraseña" name="contra" id="contraseñas">
-                    <br>
-                    <button  id="btnagregar" onclick = "agregardatos()" class="botonenviar">REGISTRAR</button>
-                    
-                <!-- </form> -->
-                <div class="col">
-                    <h2>Listado de usuarios</h2>
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">correo</th>
-                                    <th>contraseña</th>
-                                </tr>
-                            </thead>
-                            <tbody id="listausuarios">
+                <input type="text" placeholder="NOMBRE" name="nombre" required id="nombres">
+                <input type="email" placeholder="CORREO" name="email" required id="correos">
+                <input type="password" placeholder="CONTRASEÑA" name="contra" id="contraseñas">
+                <br>
+                <button id="btnagregar" onclick="agregardatos()" class="botonenviar">REGISTRAR</button>
 
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
 
-        </section>
-        <section>
-            
-        </section>
+
+        </section>        
         <section class="redes">
+            <div class="textofooter">TODOS LOS DERECHOS RESERVADOS</div>
             <div class="contenedor">
                 <a href="" class="Facebook"><i class="fa fa-facebook-official"></i></a>
                 <a href="" class="youtube"><i class="fa fa-youtube"></i></a>
