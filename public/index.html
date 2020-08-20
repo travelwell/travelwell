@@ -22,7 +22,7 @@
                 <a href="">Inicio</a>
                 <a href="nosotros.html">Nosotros</a>
                 <a href="galeria.html">Galeria</a>
-                <a href="login.html">Iniciar sesión</a>
+                <a href="#registro">Iniciar sesión</a>
             </nav>
 
             <div class="contenedor-nombre">
@@ -44,19 +44,19 @@
 
 
             <div>
-                <button onclick="agregarmapa()" type="button" class="btn btn-primary" id="Descubre" ><strong>Descubre</strong>
+                <button onclick="abrirmapa()" type="button" class="btn btn-primary" id="Descubre"><strong>Descubre</strong>
                     <br> ver mapa interactivo con lugares a descubrir
                 </button>
             </div>
 
             <div>
-                <button onclick="agregaragenda()" type="button" class="btn btn-primary" id="Agenda"><strong>Ver sitios</strong>
+                <button onclick="abriragenda()" type="button" class="btn btn-primary" id="Agenda"><strong>Ver sitios</strong>
                     <br> Observa los sitios que hemos encontrado como posibles destinos a tu viaje
                 </button>
             </div>
 
             <div>
-                <button onclick="agregarformulario()" type="button" class="btn btn-primary" id="Paquetes"><strong>Agenda</strong>
+                <button onclick="abrirformulario()" type="button" class="btn btn-primary" id="Paquetes"><strong>Agenda</strong>
                     <br> Administra tiempo y recursos con la agenda interactiva
                 </button>
             </div>
@@ -69,20 +69,37 @@
     <footer>
        
 
-        <section class="contactos">
+        <section class="contactos" name="registro" id="registro">
             <div class="contenedor" class="formulario">
                 <h3 class="titulo">REGISTRO</h3>
                 <!-- <form  class="formulario"> -->
-                <input type="text" placeholder="NOMBRE" name="nombre" required id="nombres">
-                <input type="email" placeholder="CORREO" name="email" required id="correos">
-                <input type="password" placeholder="CONTRASEÑA" name="contra" id="contraseñas">
+                <!-- <input type="text" placeholder="NOMBRE" name="nombre" required id="nombres"> -->
+                <input type="email" placeholder="CORREO" name="email" required id="emailUser">
+                <input type="password" placeholder="CONTRASEÑA" name="contra" id="passUser">
                 <br>
-                <button id="btnagregar" onclick="agregardatos()" class="botonenviar">REGISTRAR</button>
+                <button  onclick="registrarUsuario()" class="botonenviar">REGISTRAR</button>
+                <button  onclick="login()" class="botonenviar">INICIAR</button>
 
             </div>
+        </section>
+        <!-- <div class="col">
+            <h2>Listado de usuarios</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">correo</th>
+                            <th>contraseña</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listausuarios">
 
-
-        </section>        
+                    </tbody>
+                </table>
+            </div>
+        </div> -->
+        
         <section class="redes">
             <div class="textofooter">TODOS LOS DERECHOS RESERVADOS</div>
             <div class="contenedor">
@@ -96,6 +113,8 @@
     <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+
 
     <!-- scrips bosstratp -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

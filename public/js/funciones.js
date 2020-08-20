@@ -15,12 +15,21 @@ firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
 //   variables
-var txnombres = document.getElementById('nombres');
-var txcontraseñas = document.getElementById('contraseñas');
-var txcorreos = document.getElementById('correos');
+// var txnombres = document.getElementById('nombres');
+// var txcontraseñas = document.getElementById('contraseñas');
+// var txcorreos = document.getElementById('correos');
 var listausuarios = document.getElementById('listausuarios');
 var btnagregar = document.getElementById('btnagregar');
 var btnleer = document.getElementById('btnleer');
+
+
+// login y registro
+var emailUser = document.getElementById('emailUser');
+var passUser = document.getElementById('passUser');
+
+var emailUsuarioLogueado = document.getElementById('emailUsuarioLogueado');
+
+
 
 // funciones
 
@@ -28,18 +37,26 @@ var btnleer = document.getElementById('btnleer');
 // function abrirpaquetes(){
 //     location.href = "paquetes.html";
 // }
-function   agregarmapa(){
-    location.href="maps.html";
+function abrirsitios(){
+    location.href = "agregarsitios.html";
 }
-function agregaragenda(){
-    location.href="agenda.html"
+function abrirmapa(){
+    location.href = "maps.html";
 }
-function agregarformulario(){
-    location.href="formulario.html"
+function abriragenda(){
+    location.href = "agenda.html";
+}
+function abrirformulario(){
+    location.href = "Formulario.html";
 }
 
+
+
+
+
+
 function agregardatos() {
-    leerDatos();
+    // leerDatos();
     db.collection("usuarios").add({
         nombre: txnombres.value,
         correo: txcorreos.value,
@@ -68,8 +85,8 @@ function leerDatos() {
                        <td>${doc.data().correo}</td>
                        <td>${doc.data().contra}</td>
                        <td>
-                           <button onclick="eliminar('${doc.id}')" class="btn btn-danger"><i class="far fa-trash-alt"></i>delete</button>
-                           <button onclick="editar('${doc.id}')" class="btn btn-info"><i class="far fa-edit"></i>edit</button>
+                           <button onclick="eliminar('${doc.id}')" class="btn btn-danger">delete</button>
+                       
                        </td>
                    </tr>           
                `;
@@ -122,8 +139,59 @@ function actualizarDatos() {
         });
 
 }
-
 function limpiarDatos() {
     txtname.value = "";
     apellidos.value = "";
+}
+
+
+function limpiarDatosLogin() {
+    emailUser.value = "";
+    passUser.value = "";
+}
+
+function registrarUsuario() {
+    firebase.auth().createUserWithEmailAndPassword(emailUser.value, passUser.value)
+        .then(() => {
+            console.log("El usuario se ha registrado");
+            limpiarDatosLogin();
+        })
+        .catch(function (error) {
+            console.log("Error: ", error.message);
+        });
+}
+
+function login() {
+    var uno = emailUser.value;
+    firebase.auth().signInWithEmailAndPassword(uno, passUser.value)
+        .then((user) => {
+            sessionStorage.setItem('login', user.email);
+            window.location.href = 'admin.html';
+        })
+        .catch(function (error) {
+            console.log("Error: ", error.message);
+            limpiarDatosLogin();
+        });
+}
+
+function cerrarSesion() {
+    firebase.auth().signOut()
+        .then(() => {
+            console.log("Sesion cerrada exitosamente");
+            window.location.href = 'index.html';
+        }).catch((error) => {
+            console.log(error.message)
+        });
+}
+
+function estado() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            emailUsuarioLogueado.innerHTML = user.email;
+            usuarioActual = user;
+        }
+        else {
+            window.location.href = 'index.html';
+        }
+    });
 }
