@@ -19,6 +19,7 @@ var db = firebase.firestore();
 // var txcontraseñas = document.getElementById('contraseñas');
 // var txcorreos = document.getElementById('correos');
 var listausuarios = document.getElementById('listausuarios');
+var listaagendas = document.getElementById('listaagendas');
 var btnagregar = document.getElementById('btnagregar');
 var btnleer = document.getElementById('btnleer');
 
@@ -44,7 +45,7 @@ function abrirmapa(){
     location.href = "maps.html";
 }
 function abriragenda(){
-    location.href = "agenda.html";
+    location.href = "paquetes.html";
 }
 function abrirformulario(){
     location.href = "Formulario.html";
@@ -57,7 +58,7 @@ function abrirformulario(){
 
 function agregardatos() {
     // leerDatos();
-    db.collection("usuarios").add({
+    db.collection("agendas").add({
         nombre: txnombres.value,
         correo: txcorreos.value,
         contra: txcontraseñas.value,
@@ -75,7 +76,7 @@ function leerDatos() {
     listausuarios.innerHTML = "";
     // btnActualizar.classList.add('d-none');
 
-    db.collection("usuarios").get()
+    db.collection("agendas").get()
         .then((querySnapshot) => {
             // esquema para definir funciones anonimas
             querySnapshot.forEach((doc) => {
