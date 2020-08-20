@@ -7,6 +7,19 @@
     /* estos es para especificar los altos y anchos de acuerdo el navegador */
 }
 
+#map {
+
+    background: white;
+    width: 1000px;
+    height: 430px;
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    margin-top: -100px;
+    margin-left: -100px;
+}
+
+
 body{
     background: fff;
     font-family: 'Roboto',sans-serif;

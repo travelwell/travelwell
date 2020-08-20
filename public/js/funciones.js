@@ -28,6 +28,15 @@ var btnleer = document.getElementById('btnleer');
 // function abrirpaquetes(){
 //     location.href = "paquetes.html";
 // }
+function   agregarmapa(){
+    location.href="maps.html";
+}
+function agregaragenda(){
+    location.href="agenda.html"
+}
+function agregarformulario(){
+    location.href="formulario.html"
+}
 
 function agregardatos() {
     leerDatos();
