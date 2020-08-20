@@ -45,10 +45,10 @@ function abrirmapa(){
     location.href = "maps.html";
 }
 function abriragenda(){
-    location.href = "paquetes.html";
+    location.href = "agenda.html";
 }
 function abrirformulario(){
-    location.href = "Formulario.html";
+    location.href = "paquetes.html";
 }
 
 
@@ -169,8 +169,11 @@ function login() {
             sessionStorage.setItem('login', user.email);
             window.location.href = 'admin.html';
         })
+
+        
         .catch(function (error) {
             console.log("Error: ", error.message);
+            alert('dartos incorrectos');
             limpiarDatosLogin();
         });
 }
