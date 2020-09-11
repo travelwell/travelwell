@@ -169,11 +169,8 @@ function login() {
             sessionStorage.setItem('login', user.email);
             window.location.href = 'admin.html';
         })
-
-        
         .catch(function (error) {
             console.log("Error: ", error.message);
-            alert('dartos incorrectos');
             limpiarDatosLogin();
         });
 }
