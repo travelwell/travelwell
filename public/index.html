@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="viajar,caqueta,rutas,horario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travell well</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <nav class="menu">
+
+                <a href="">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="#registro">Iniciar sesión</a>
+		 <a href="">Agenda</a>
+            </nav>
+
+            <div class="contenedor-nombre">
+                <div class="nombrelogo">
+
+                    <h3>Conoce el caquetá</h2>
+                        <h1>TRAVEL WELL</h1>
+                        <h3>Guia del turista</h2>
+                            <!-- <img src="./img/travel.png" alt="" width="100px" height="80px"> -->
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="categorias">
+        <div class="contenedor">
+
+
+
+            <div>
+                <button onclick="abrirmapa()" type="button" class="btn btn-primary" id="Descubre"><strong>Descubre</strong>
+                    <br> ver mapa interactivo con lugares a descubrir
+                </button>
+            </div>
+
+            <div>
+                <button onclick="abriragenda()" type="button" class="btn btn-primary" id="Agenda"><strong>Ver sitios</strong>
+                    <br> Observa los sitios que hemos encontrado como posibles destinos a tu viaje
+                </button>
+            </div>
+
+            <div>
+                <button onclick="abrirformulario()" type="button" class="btn btn-primary" id="Paquetes"><strong>Paquetes</strong>
+                    <br> Administra tiempo y recursos con la agenda interactiva
+                </button>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <footer>
+       
+
+        <section class="contactos" name="registro" id="registro">
+            <div class="contenedor" class="formulario">
+                <h3 class="titulo">REGISTRO</h3>
+                <!-- <form  class="formulario"> -->
+                <!-- <input type="text" placeholder="NOMBRE" name="nombre" required id="nombres"> -->
+                <input type="email" placeholder="CORREO" name="email" required id="emailUser">
+                <input type="password" placeholder="CONTRASEÑA" name="contra" id="passUser">
+                <br>
+                <button  onclick="registrarUsuario()" class="botonenviar">REGISTRAR</button>
+                <button  onclick="login()" class="botonenviar">INICIAR</button>
+
+            </div>
+        </section>
+        <!-- <div class="col">
+            <h2>Listado de usuarios</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">correo</th>
+                            <th>contraseña</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listausuarios">
+
+                    </tbody>
+                </table>
+            </div>
+        </div> -->
+        
+        <section class="redes">
+            <div class="textofooter">TODOS LOS DERECHOS RESERVADOS</div>
+            <div class="contenedor">
+                <a href="" class="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="" class="youtube"><i class="fa fa-youtube"></i></a>
+                <a href="" class="whatssatp"><i class="fa fa-whatsapp"></i></a>
+            </div>
+        </section>
+
+    </footer>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+
+
+    <!-- scrips bosstratp -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- 
+    agregamos el script genereal  -->
+    <script src="../public/js/funciones.js"></script>
+</body>
+
+</html>
