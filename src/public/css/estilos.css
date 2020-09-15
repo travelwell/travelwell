@@ -70,29 +70,29 @@ header .menu a:hover{
     border-bottom: 2px solid white;
 }
 
-header .contenedor-nombre{
+ .contenedor-nombre{
     display: flex;
     justify-content: center;
     align-content: center;
     margin: 100px 0;
 }
-header .contenedor-nombre .nombrelogo{
+ .contenedor-nombre .nombrelogo{
     /* border: 2px  solid white; */
     display: inline-block;
     text-align: center;
     padding: 20px 60px;
 }
 
-header .contenedor-nombre .nombrelogo h1,
-header .contenedor-nombre .nombrelogo h3{
+ .contenedor-nombre .nombrelogo h1,
+ .contenedor-nombre .nombrelogo h3{
     color: white;
     margin:0;
 }
-header .contenedor-nombre .nombrelogo h1{
+ .contenedor-nombre .nombrelogo h1{
     font-size: 4em;
     }
 
-header .contenedor-nombre .nombrelogo h3{
+ .contenedor-nombre .nombrelogo h3{
 margin: 30px 0;
 }
 /* --------------CATEGORIAS----------- */
@@ -148,26 +148,26 @@ footer h1{
     color: aliceblue;
     text-align: center;
 }
-footer .contactos{
+ .contactos{
     padding: 60px 0;
     background: #1f3e75;
 }
 
-footer .contactos .titulo{
+ .contactos .titulo{
     font-size: 34px;
     line-height: 34px;
     text-align: center;
     color: black;
 }
 
-footer .contactos .formulario{
+ .contactos .formulario{
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 
 }
 
-footer .contactos  input 
+ .contactos  input 
 {
     border: 2px solid black;
     border-radius: 5px;
@@ -175,7 +175,7 @@ footer .contactos  input
     font-size: 20px;
     font-size: 20px;
 }
-footer .contactos  input{
+ .contactos  input{
     width: 49%;
     margin-bottom: 15px;
 }

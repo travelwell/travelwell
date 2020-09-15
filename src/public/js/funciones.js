@@ -15,9 +15,7 @@ firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
 //   variables
-// var txnombres = document.getElementById('nombres');
-// var txcontraseñas = document.getElementById('contraseñas');
-// var txcorreos = document.getElementById('correos');
+
 var listausuarios = document.getElementById('listausuarios');
 var listaagendas = document.getElementById('listaagendas');
 var btnagregar = document.getElementById('btnagregar');
@@ -30,32 +28,18 @@ var passUser = document.getElementById('passUser');
 
 var emailUsuarioLogueado = document.getElementById('emailUsuarioLogueado');
 
-
-
 // funciones
 
-
-// function abrirpaquetes(){
-//     location.href = "paquetes.html";
-// }
 function abrirsitios(){
     location.href = "agregarsitios.html";
 }
 function abrirmapa(){
-    location.href = "maps.html";
+    res.render('./agendas');
 }
-function abriragenda(){
-    location.href = "agenda.html";
-}
+
 function abrirformulario(){
     location.href = "paquetes.html";
 }
-
-
-
-
-
-
 function agregardatos() {
     // leerDatos();
     db.collection("agendas").add({
@@ -70,6 +54,10 @@ function agregardatos() {
         .catch((error) => {
             console.error("Error: ", error);
         });
+}
+function limpiarDatos() {
+    txtname.value = "";
+    apellidos.value = "";
 }
 
 function leerDatos() {
@@ -169,11 +157,8 @@ function login() {
             sessionStorage.setItem('login', user.email);
             window.location.href = 'admin.html';
         })
-
-        
         .catch(function (error) {
             console.log("Error: ", error.message);
-            alert('dartos incorrectos');
             limpiarDatosLogin();
         });
 }
