@@ -1,0 +1,30 @@
+<style>
+    body {
+        background-image: url(img/pa.jpg);
+    }
+</style>
+
+<form  method="POST" action="/guardar" class="formulario">
+    <h1 class="formulario__titulo">Agenda tu sitio</h1>
+    <p class="formulario__parrafo">Llena este pequeño formulario para agendar tu sitio favorito.</p>
+
+    <label for="nombre" class="formulario__label">¿Cual es tu nombre?</label>
+    <input name="nombres" id="nombrecli" type="text" class="formulario__input" placeholder="Nombre:" required>
+
+    <label for="telefono" class="formulario__label">Numero de telefono</label>
+    <input name="telefonos" id="tel" type="number" class="formulario__input" placeholder="Telefono:" required>
+
+    <label for="correo" class="formulario__label">Correo</label>
+    <input name="correos" id="correo" type="email" class="formulario__input" placeholder="Telefono:" required>
+
+    <!-- <label for="fecha" class="formulario__label">Indica la fecha </label>
+        <input id="fecha" type="date" class="formulario__input" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"> -->
+
+
+    <!-- <label for="hora" class="formulario__label">Indica la hora </label>
+        <input id="hora" type="time" class="formulario__input" min="07:00" max="21:00" step="3600" required>
+         -->
+
+    <button  id="btnagregar" class="formulario__submit" type="submit">Enviar </button>
+
+</form>

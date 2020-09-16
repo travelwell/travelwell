@@ -1,0 +1,51 @@
+{{!-- <link rel="stylesheet" href="/public/ccs/estilos.css"> --}}
+{{>headerprincipal}}
+<section class="categorias">
+    <div class="contenedor">
+
+
+
+        <div>
+            <form  method="POST" action="./maps">
+                <button onclick="alertas()" type="submit" class="btn btn-primary" id="Descubre">
+                    <strong>Descubre</strong>
+                    <br> ver mapa interactivo con lugares a descubrir
+                </button>
+            </form>
+        </div>
+
+        <div>
+            <button onclick="abrirmapa()" type="button" class="btn btn-primary" id="Agenda"><strong>Ver
+                    sitios</strong>
+                <br> Observa los sitios que hemos encontrado como posibles destinos a tu viaje
+            </button>
+        </div>
+
+        <div>
+            <button onclick="abrirformulario()" type="button" class="btn btn-primary"
+                id="Paquetes"><strong>Paquetes</strong>
+                <br> Administra tiempo y recursos con la agenda interactiva
+            </button>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="contactos" name="registro" id="registro">
+    <div class="contenedor" class="formulario">
+        <h3 class="titulo">REGISTRO</h3>
+        <!-- <form  class="formulario"> -->
+        <!-- <input type="text" placeholder="NOMBRE" name="nombre" required id="nombres"> -->
+        <input type="email" placeholder="CORREO" name="email" required id="emailUser">
+        <input type="password" placeholder="CONTRASEÑA" name="contra" id="passUser">
+        <br>
+        <button onclick="registrarUsuario()" class="botonenviar">REGISTRAR</button>
+        <button onclick="login()" class="botonenviar">INICIAR</button>
+
+    </div>
+</section>
+
+{{>footer}}

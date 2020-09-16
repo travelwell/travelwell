@@ -1,0 +1,35 @@
+   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ 
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+
+<div class="container">
+    <h1>Agregar sitio</h1>
+    <input type="text" id="nombre" placeholder="nombre" class="form-control my-3">
+    <input type="text" id="imagen" placeholder="imagen" class="form-control my-3">
+    <input type="text" id="brevedescripcion" placeholder="brevedescripcion" class="form-control my-3">
+    <button class="btn btn-info" id="boton" onclick="guardar()">guardar</button>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">born</th>
+        </tr>
+      </thead>
+      <tbody id="tabla2">
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
