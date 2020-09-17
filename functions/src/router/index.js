@@ -42,6 +42,9 @@ router.get('/guardar',controlador.guardar);
  router.post('/registraru',controlador.registraru);
  router.get('/registraru',controlador.registraru);
 
+ router.post('/agregarsitios',controlador.agregarsitios);
+ router.get('/agregarsitios',controlador.agregarsitios);
+
 
 
 module.exports = router;
