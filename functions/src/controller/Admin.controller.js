@@ -1,53 +1,85 @@
 const { firebase } = require('../../configFirebase');
 const controlador = {};
+const auth = firebase.auth();
 
 // var storage = admin.storage();
 const db = firebase.firestore();
 // var storageRef =storage().get();
-
-// VARIABLES
-// login y registro
-// var emailUser = document.getElementById('emailUser');
-// var passUser = document.getElementById('passUser');
 
 // RUTAS
 
 controlador.inicio = (req, res) => {
     res.render('index');
 }
-
-controlador.prueba = (req, res) => {
-    res.render('./prueba');
+//este es el login
+controlador.login = (req, res) => {
+    res.render('./login');
 }
 
 controlador.nosotros = (req, res) => {
     res.render('./nosotros')
 }
-controlador.admin = (req, res) => {
-    res.render('./admin',)
-}
+
 controlador.galeria = (req, res) => {
-    res.render('./galeria',)
+    res.render('./galeria')
 }
 controlador.maps = (req, res) => {
-    res.render('./maps',)
+    res.render('./maps')
 }
 controlador.paquetes = (req, res) => {
-    res.render('./paquetes',)
+    res.render('./paquetes')
 }
 controlador.agenda = (req, res) => {
-    res.render('./agenda',)
+    res.render('./agenda')
 }
 controlador.formulario = (req, res) => {
-    res.render('./formulario',)
+    res.render('./formulario')
 }
-controlador.admin2agregar = (req, res) => {
-    res.render('./admin2agregar',)
+controlador.admin = async (req, res) => {
+    res.render('./admin', {
+        sitiosagregados: await leersitios()
+    })
 }
 
-//----------------------
+controlador.agregarsitios = async (req, res) => {
+    console.log(req.body);
+     var nombre = req.body.nombre;
+     var descripcion = req.body.descripcion;
+    db.collection("sitiosagregados").add({
+        nombres: nombre,
+        descripciones: descripcion
+    })
+        .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+
+        })
+        .catch((error) => {
+            console.error("Error: ", error);
+        });
+    res.render("./admin", {
+        sitiosagregados: await leersitios()
+    });
+}
+
+const leersitios = () => {
+    return new Promise(resolve => {
+        let listasitios = [];
+        db.collection("sitiosagregados").get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    listasitios.push(doc.data())
+                });
+                resolve(listasitios);
+            })
+            .catch(function (error) {
+                console.log("error", error);
+            })
+    })
+}
 
 // -------------------------------------------------------
+//AGREGAR,GUARDAR
+
 controlador.guardar = (req, res) => {
     console.log(req.body);
 
@@ -69,6 +101,7 @@ controlador.guardar = (req, res) => {
 
 }
 
+//REGISTRO Y LOGIN
 
 controlador.registraru = (req, res) => {
     console.log(req.body)
@@ -84,94 +117,36 @@ controlador.registraru = (req, res) => {
         })
         .catch(function (error) {
             console.log("Error: ", error.message);
+            alert('la direccion de correo electronico ya esta siendo utilizada')
+            res.redirect('/prueba');
         });
 }
 
 
-controlador.login = (req, res) => {
-    console.log(req.body)
 
-    firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.contra)
-        .then((user) => {
-            sessionStorage.setItem('login', user.email);
-            console.log("funcionando");
-            res.redirect('/');
+controlador.loginn = (req, res) => {
+    console.log(req.body);
+   auth.signInWithEmailAndPassword(req.body.email, req.body.contra)
+        .then(async () => {
+            res.render("./admin", {
+                sitiosagregados: await leersitios()
+            });
         })
         .catch(function (error) {
             console.log("Error: ", error.message);
-            //  limpiarDatosLogin();
         });
 }
+controlador.cerrarSesion = (req, res) => {
+    console.log(req.body);
+    auth.signOut()
+        .then(() => {
+            console.log("Sesion cerrada exitosamente");
+            res.redirect('/');
 
-controlador.agregarsitios = (req, res) => {
-
-    console.log(req.body)
-
-    var nombre = req.body.nombre;
-    var descripcion = req.body.descripcion;
-
-    db.collection("sitiosagregados").doc().set({
-        first: nombre,
-        born: descripcion,
-
-    })
-        .then(function (docRef) {
-            console.log("CONSOLE: Sítio registrado: ");
-
-        })
-        .catch(function (error) {
-            console.log("CONSOLE: Error no se ha podido registrar el sitio: ", error);
+        }).catch((error) => {
+            console.log(error.message)
         });
 }
-var tabla = req.body.tabla;
-    db.collection("sitiosagregados").get().then((querySnapshot) => {
-        tabla.innerHTML = '';
-        querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data().first}`);
-            tabla.innerHTML += `
-
-    <div class="col-md-4">
-    <div class="card mb-4 shadow-sm">
-    
-    
-      <div class="card-body">
-        <p class="card-text"> <b>${doc.data().first}</b> </p>
-        <p class="card-text">${doc.data().born}</p>
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-          </div>
-          <a href="Formulario.html" class="btn btn-secondary my-2">Agenda</a>
-        </div>
-      </div>
-    </div>
-    </div>
-        `
-
-        });
-    });
-
-    var tabla2 = req.body.tabla2;
-    db.collection("sitiosagregados").onSnapshot((querySnapshot) => {
-        tabla2.innerHTML = '';
-        querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data().first}`);
-            tabla2.innerHTML += `
-        <tr>
-          <th scope="row">${doc.id}</th>
-          <td>${doc.data().first}</td>
-          <td>${doc.data().born}</td>
-          <td><button class="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button></td>
-          <td><button class="btn btn-warning" onclick="editar('${doc.id}','${doc.data().first}','${doc.data().born}')">Editar</button></td>
-        </tr>
-        
-        `
-
-        });
-    });
-
-
-
 
 module.exports = controlador;
 
