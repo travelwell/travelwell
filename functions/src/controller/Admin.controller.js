@@ -40,7 +40,8 @@ controlador.admin = async (req, res) => {
         sitiosagregados: await leersitios()
     })
 }
-
+//-------------------------------------------------------
+// AGREGANDO SITIOS
 controlador.agregarsitios = async (req, res) => {
     console.log(req.body);
      var nombre = req.body.nombre;
@@ -56,9 +57,9 @@ controlador.agregarsitios = async (req, res) => {
         .catch((error) => {
             console.error("Error: ", error);
         });
-    res.render("./admin", {
+     res.render("./admin", {
         sitiosagregados: await leersitios()
-    });
+     });
 }
 
 const leersitios = () => {
@@ -78,7 +79,7 @@ const leersitios = () => {
 }
 
 // -------------------------------------------------------
-//AGREGAR,GUARDAR
+//GUARDAR AGENDAS
 
 controlador.guardar = (req, res) => {
     console.log(req.body);
@@ -100,7 +101,7 @@ controlador.guardar = (req, res) => {
         });
 
 }
-
+//---------------------------------------------------------------------------------
 //REGISTRO Y LOGIN
 
 controlador.registraru = (req, res) => {
@@ -136,7 +137,7 @@ controlador.loginn = (req, res) => {
             console.log("Error: ", error.message);
         });
 }
-controlador.cerrarSesion = (req, res) => {
+controlador.cerrarsesion = (req, res) => {
     console.log(req.body);
     auth.signOut()
         .then(() => {

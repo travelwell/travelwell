@@ -6,8 +6,6 @@ const controlador = require('../controller/Admin.controller');
 router.get('/', controlador.inicio);
 router.post('/', controlador.inicio);
 
-router.get('/login', controlador.login);
-
  router.get('/nosotros', controlador.nosotros);
  router.post('/nosotros', controlador.nosotros);
 
@@ -43,5 +41,9 @@ router.get('/guardar',controlador.guardar);
 
  router.post('/agregarsitios',controlador.agregarsitios);
  router.get('/agregarsitios',controlador.agregarsitios);
+
+ router.post('/cerrarsesion',controlador.cerrarsesion);
+ router.get('/cerrarsesion',controlador.cerrarsesion);
+
 
 module.exports = router;
