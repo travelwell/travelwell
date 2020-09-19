@@ -1,0 +1,43 @@
+
+{{>headerprincipal}}
+<section class="categorias">
+    <div class="contenedor">
+
+
+
+        <div>
+            <form method="POST" action="./maps">
+                <button onclick="alertas()" type="submit" class="btn btn-primary" id="Descubre">
+                    <strong>Descubre</strong>
+                    <br> ver mapa interactivo con lugares a descubrir
+                </button>
+            </form>
+        </div>
+
+        <div>
+            <form method="POST" action="./agenda">
+            <button  onclick="abriragenda()" action="./agenda" type="submit" class="btn btn-primary" id="Agenda"><strong> <a href="./agendas"></a>
+                    sitios</strong>
+                <br> Observa los sitios que hemos encontrado como posibles destinos a tu viaje
+            </button>
+            </form>
+        </div>
+
+        <div>
+            <form method="POST" action="./paquetes">
+            <button onclick="" type="submit" class="btn btn-primary"
+                id="Paquetes"><strong>Agendas</strong>
+                <br> Administra tiempo y recursos con la agenda interactiva
+            </button>
+            </form>
+        </div>
+
+
+    </div>
+
+</section>
+
+{{>registrar}}
+  
+
+{{>footer}}

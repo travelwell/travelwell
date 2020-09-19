@@ -2,7 +2,7 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin-bottom: 0;
-  background:url(../img/fondo.jpg);
+  background-color: #fff;
 }
 @media (min-width: 768px) {
   .jumbotron {
@@ -23,6 +23,11 @@
   max-width: 40rem;
 }
 
-#album{
-  background: #536db7;
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
 }

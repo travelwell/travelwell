@@ -1,0 +1,48 @@
+{{>header3}}
+<style>
+    body {
+        background-image: url(img/pa.jpg);
+    }
+</style>
+
+<form method="POST" action="/formulario" class="formulario">
+    <h1 class="formulario__titulo">Agenda tu sitio</h1>
+    <p class="formulario__parrafo">Llena este pequeño formulario para agendar tu sitio favorito.</p>
+
+    <label for="nombre" class="formulario__label">¿Cual es tu nombre?</label>
+    <input name="nombres" id="nombrecli" type="text" class="formulario__input" placeholder="Nombre:" required>
+
+    <label for="telefono" class="formulario__label">Numero de telefono</label>
+    <input name="telefonos" id="tel" type="number" class="formulario__input" placeholder="Telefono:" required>
+
+    <label for="correo" class="formulario__label">Correo</label>
+    <input name="correos" id="correo" type="email" class="formulario__input" placeholder="Telefono:" required>
+
+    <label for="" class="formulario__label"><strong>sitios disponibles</strong></label>
+        <select class="custom-select" name="nombressitios">
+            
+            <option value="El encanto">El encanto</option>
+            <option value="Cascada anayacito">Cascada anayacito</option>
+            <option value="Parque los picachos">Parque los picachos</option>
+            <option value="Las dalias">Las dalias</option>
+            <option value="Reserva el danubio">Reserva el danubio</option>
+            <option value="Cueva los guacharos">Cueva los guacharos</option>
+            <option value="Cañon aracuara">Cañon aracuara</option>
+            <option value="Balneario las pailas">Balneario las pailas</option>
+            <option value="Santuario Divino niño">Santuario Divino niño</option>
+
+            <option selected disabled value>Elige tu sitio</option>
+        </select>
+
+
+    <button id="btnagregar" class="formulario__submit" type="submit">Enviar </button>
+
+</form>
+
+
+{{!-- ------------------------------- --}}
+
+
+  {{!-- --------------------------------------- --}}
+
+{{>footer}}

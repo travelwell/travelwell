@@ -1,0 +1,59 @@
+{{>header3}}
+
+<div class="container">
+
+  <div class="jumbotron p-4 p-md-5" id="fondojumbo">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">Agendas travelwell</h1>
+      <p class="lead my-3">Porque queremos hacerte la vida mas facil.</p>
+    </div>
+  </div>
+  <br>
+
+
+  {{!-- --------------------------------------- --}}
+
+</div>
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-4 mb-4 font-Roboto border-bottom">
+        Informacion importante
+      </h3>
+
+      <div class="blog-post">
+        <h2 class="blog-post-title">AGENDAS</h2>
+      </div>
+      {{!-- AGREGANDO AGENDAS --}}
+
+      <div class="row">
+        {{#each sitiosagendados}}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="img/travel.png">
+            <div class="card-body">
+              <p class="card-text">Nombre: <b>{{nombre}}</b> </p>
+              <p class="card-text">Telefono: <b>{{telefono}}</b> </p>
+              <p class="card-text">Correo: <b>{{correo}}</b> </p>
+              <p class="card-text">Sitio: <b>{{nombresitio}}</b> </p>
+            </div>
+          </div>
+        </div>
+
+
+        {{/each}}
+      </div>
+
+      <p>LAS AGENDAS SON LA INFORMACION DE INTERES SOBRE TUS POSIBLES VIAJES EN LOS CUALES MEDIANTE LA PAGINA
+        travelwell
+        PODRAS OBSERVAR TODA LA INFORMACION RELACIONADA
+      </p>
+
+
+      <!-- /.blog-main -->
+    </div>
+  </div>
+</main><!-- /.container -->
+
+{{>footer}}
