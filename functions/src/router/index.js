@@ -15,26 +15,27 @@ router.post('/galeria', controlador.galeria);
 router.get('/maps',controlador.maps);
 router.post('/maps',controlador.maps);
 
-router.get('/paquetes',controlador.paquetes);
-router.post('/paquetes',controlador.paquetes);
-
 router.get('/agenda',controlador.agenda);
 router.post('/agenda',controlador.agenda);
 
 router.get('/formulario',controlador.formulario);
-router.post('/formulario',controlador.formulario);
+// aqui llamamos en el metodo post en formulario guardar agendas
+router.post('/formulario',controlador.agregaragenda);
 
+ router.get('/paquetes',controlador.paquetes);
+// // router.post('/paquetes',controlador.guardar);
 
 router.get('/admin', controlador.admin);
 // aqui llamamos en el metodo post en admin agregarsitios
 router.post('/admin', controlador.agregarsitios);
 ///METODOS DE INTERACCION
 
+router.get('/admin2',controlador.admin2);
+router.post('/admin2',controlador.agregaragenda);
+
 router.get('/login', controlador.login);
 router.post('/logina', controlador.loginn);
 
-router.post('/guardar',controlador.guardar);
-router.get('/guardar',controlador.guardar);
 
  router.post('/registraru',controlador.registraru);
  router.get('/registraru',controlador.registraru);

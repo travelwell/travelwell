@@ -20,11 +20,11 @@
             <div class="sidebar-sticky pt-3">
                 <ul class="nav flex-row">
                     <li>
-                        <a href="">Agendas</a>
+                        <a href="./admin2">Agendas</a>
                     </li>
-                    <li>
+                    {{!-- <li>
                         <a href="">Registros</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </nav>
@@ -43,6 +43,9 @@
         <button class="btn btn-info" type="submit" id="boton">Agregar</button>
     </form>
 
+    <br>
+    <br>
+
     <table name="tabla" class="table">
         <thead>
             <tr>
@@ -54,6 +57,7 @@
 
         <tbody>
             {{#each sitiosagregados}}
+            
             <tr>
                 {{!-- <th scope="row"></th> --}}
                 <td>{{nombres}}</td>

@@ -1,113 +1,59 @@
-{{>header2}}
+{{>header3}}
 
 <div class="container">
 
-    <div class="jumbotron p-4 p-md-5" id="fondojumbo">
-      <div class="col-md-6 px-0">
-        <h1 class="display-4 font-italic">Agendados travelwell</h1>
-        <p class="lead my-3">Agendas hechas por nuestros usuarios.</p>
-      </div>
-    </div>
-    <br>
-
-    <div class="row mb-2">
-      <div class="col-md-6">
-        <div
-          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <h3 class="mb-0">Paquete1</h3>
-            <p class="card-text mb-auto">Un viaje de 3 dias desde el santuario divino niño  para con tinuar en un segundo
-              dia en la cueva de los guacharos y regresando a la ciudad de florencia
-            </p>
-            <a href="#" class="stretched-link">Continua leyendo</a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <img src="./img/galeria/guacharos.jpeg" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div
-          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <h3 class="mb-0">Paquete 2</h3>
-            <p class="mb-auto">Tarde de rio en la mejor cascada del departamento ananyacito con hospedaje en la ciudad de florencia con un segundo dia 
-              en el balneario las pailas
-
-            </p>
-            <a href="#" class="stretched-link">Continue leyendo</a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-           <img src="./img/galeria/laspailas.jpeg" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div
-          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <h3 class="mb-0">Paquete 3</h3>
-            <p class="mb-auto">viaje por el reservorio el danuvio con hospedaje de una noche </p>
-            <a href="#" class="stretched-link">Continue leyendo</a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-           <img src="./img/galeria/lasdalias.jpeg" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div
-          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <h3 class="mb-0">Paquete 4</h3>
-            <p class="mb-auto">Tarde reserva natural las dalias ubicado en la montañita con un costo de 10.000 pesos
-              con hospedaje glamping
-            </p>
-            <a href="#" class="stretched-link">Continue leyendo</a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-           <img src="./img/galeria/lasdalias.jpeg" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div
-          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <h3 class="mb-0">Paquete 5</h3>
-            <p class="mb-auto">expedicion parque los picachos con diracion de 1 dia</p>
-            <a href="#" class="stretched-link">Continue leyendo</a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-           <img src="./img/galeria/parquepicachos.jpeg" alt="">
-          </div>
-        </div>
-      </div>
-
+  <div class="jumbotron p-4 p-md-5" id="fondojumbo">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">Agendas travelwell</h1>
+      <p class="lead my-3">Porque queremos hacerte la vida mas facil.</p>
     </div>
   </div>
+  <br>
 
-  <main role="main" class="container">
-    <div class="row">
-      <div class="col-md-8 blog-main">
-        <h3 class="pb-4 mb-4 font-Roboto border-bottom">
-          Informacion importante
-        </h3>
 
-        <div class="blog-post">
-          <h2 class="blog-post-title">Cambios a planes</h2>
+  {{!-- --------------------------------------- --}}
 
-          <p>Ante cualquier cambio que quiera realizar el cliente queremos aclarar que estas son simplemente ideas y el
-            cliente puede decidir su description
-            pues nuestra funcion principal es idear y ayudar en la toma de decisiones de nuestros turistas .</p>
-          <hr>
+</div>
 
-        </div><!-- /.blog-main -->
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-4 mb-4 font-Roboto border-bottom">
+        Informacion importante
+      </h3>
+
+      <div class="blog-post">
+        <h2 class="blog-post-title">AGENDAS</h2>
       </div>
+      {{!-- AGREGANDO AGENDAS --}}
+
+      <div class="row">
+        {{#each sitiosagendados}}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="img/travel.png">
+            <div class="card-body">
+              <p class="card-text">Nombre: <b>{{nombre}}</b> </p>
+              <p class="card-text">Telefono: <b>{{telefono}}</b> </p>
+              <p class="card-text">Correo: <b>{{correo}}</b> </p>
+              <p class="card-text">Sitio: <b>{{nombresitio}}</b> </p>
+            </div>
+          </div>
+        </div>
+
+
+        {{/each}}
+      </div>
+
+      <p>LAS AGENDAS SON LA INFORMACION DE INTERES SOBRE TUS POSIBLES VIAJES EN LOS CUALES MEDIANTE LA PAGINA
+        travelwell
+        PODRAS OBSERVAR TODA LA INFORMACION RELACIONADA
+      </p>
+
+
+      <!-- /.blog-main -->
     </div>
-  </main><!-- /.container -->
+  </div>
+</main><!-- /.container -->
 
-  {{>footer}}
-
-
-
+{{>footer}}

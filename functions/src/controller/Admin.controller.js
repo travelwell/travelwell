@@ -26,22 +26,36 @@ controlador.galeria = (req, res) => {
 controlador.maps = (req, res) => {
     res.render('./maps')
 }
-controlador.paquetes = (req, res) => {
-    res.render('./paquetes')
-}
-controlador.agenda = (req, res) => {
-    res.render('./agenda')
-}
-controlador.formulario = (req, res) => {
-    res.render('./formulario')
-}
-controlador.admin = async (req, res) => {
-    res.render('./admin', {
+
+controlador.agenda = async (req, res) => {
+    res.render('./agenda', {
         sitiosagregados: await leersitios()
     })
 }
+
+ controlador.paquetes = async (req, res) => {
+     res.render('./paquetes',{
+        sitiosagendados: await  leersitios2()
+    })
+ }
+
+//get
+controlador.admin2 = async(req,res)=>{
+    res.render('./admin2',{
+        sitiosagendados: await  leersitios2()
+    })
+}
+//get
+controlador.formulario = async (req, res) => {
+    res.render('./formulario')
+}
+
+controlador.admin = async (req, res) => {
+    res.render('./admin')
+}
 //-------------------------------------------------------
-// AGREGANDO SITIOS
+// AGREGANDO SITIOS Y AGENDAS
+
 controlador.agregarsitios = async (req, res) => {
     console.log(req.body);
      var nombre = req.body.nombre;
@@ -52,7 +66,6 @@ controlador.agregarsitios = async (req, res) => {
     })
         .then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
-
         })
         .catch((error) => {
             console.error("Error: ", error);
@@ -61,11 +74,36 @@ controlador.agregarsitios = async (req, res) => {
         sitiosagregados: await leersitios()
      });
 }
+//post
+controlador.agregaragenda = async (req, res) => {
+    console.log(req.body);
+    var nombres=req.body.nombres;
+    var telefonos = req.body.telefonos;
+    var correos = req.body.correos;
+    var nombressitios= req.body.nombressitios;
+
+    db.collection("sitiosagendados").add({
+        nombre :nombres,
+        telefono:telefonos,
+        correo: correos,
+        nombresitio: nombressitios
+    })
+        .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch((error) => {
+            console.error("Error: ", error);           
+        });
+        //aqui podemos cambiar de vista
+         res.redirect("./paquetes");
+}
+
+//LEER SITIOS Y AGENDAS
 
 const leersitios = () => {
     return new Promise(resolve => {
         let listasitios = [];
-        db.collection("sitiosagregados").get()
+       db.collection("sitiosagregados").get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     listasitios.push(doc.data())
@@ -74,33 +112,27 @@ const leersitios = () => {
             })
             .catch(function (error) {
                 console.log("error", error);
+            });
+    })
+}
+
+
+const leersitios2 = () => {
+    return new Promise(resolve => {
+        let listaa = [];
+        db.collection("sitiosagendados").get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    listaa.push(doc.data())
+                });
+                resolve(listaa);
             })
+            .catch(function (error) {
+                console.log("error", error);
+            });
     })
 }
 
-// -------------------------------------------------------
-//GUARDAR AGENDAS
-
-controlador.guardar = (req, res) => {
-    console.log(req.body);
-
-    db.collection("sitiosagendados").add({
-        nombres: req.body.nombres,
-        telefonos: req.body.telefonos,
-        correos: req.body.correos,
-    })
-        .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-            alert('Datos agregados correctamente', docRef.id);
-            res.redirect('/paquetes');
-            res.render();
-        })
-        .catch((error) => {
-            console.error("Error: ", error);
-            alert('no sirve')
-        });
-
-}
 //---------------------------------------------------------------------------------
 //REGISTRO Y LOGIN
 
@@ -148,6 +180,8 @@ controlador.cerrarsesion = (req, res) => {
             console.log(error.message)
         });
 }
+
+
 
 module.exports = controlador;
 

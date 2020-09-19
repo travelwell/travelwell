@@ -1,0 +1,58 @@
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/">Travelwell</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+        data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <form class="form-inline my-2 my-lg-0  " method="POST" action="/a">
+                <a class="nav-link" href="/cerrarsesion">Salir</a>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+ <div class="container">
+
+    <h1>Agendas</h1>
+
+    {{!-- <form method="POST" action="/admin2">
+
+        <button class="btn btn-info" type="submit" id="boton">Visualizar agendas</button>
+    </form> --}}
+
+    <table name="tabla" class="table">
+        <thead>
+            <tr>
+                {{!-- <th scope="col">id</th> --}}
+                <th scope="col">Nombre</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">correo</th>
+                <th scope="col">Lugar</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each sitiosagendados}}
+            <tr>
+
+                <td>{{nombre}}</td>
+                <td>{{telefono}}</td>
+                <td>{{correo}}</td>
+                <td>{{nombresitio}}</td>
+
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</div>
+
+
+<br>
+<br>
+
+
+{{>footer}}

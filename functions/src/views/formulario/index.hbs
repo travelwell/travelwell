@@ -1,10 +1,11 @@
+{{>header3}}
 <style>
     body {
         background-image: url(img/pa.jpg);
     }
 </style>
 
-<form  method="POST" action="/guardar" class="formulario">
+<form method="POST" action="/formulario" class="formulario">
     <h1 class="formulario__titulo">Agenda tu sitio</h1>
     <p class="formulario__parrafo">Llena este pequeño formulario para agendar tu sitio favorito.</p>
 
@@ -17,14 +18,31 @@
     <label for="correo" class="formulario__label">Correo</label>
     <input name="correos" id="correo" type="email" class="formulario__input" placeholder="Telefono:" required>
 
-    <!-- <label for="fecha" class="formulario__label">Indica la fecha </label>
-        <input id="fecha" type="date" class="formulario__input" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"> -->
+    <label for="" class="formulario__label"><strong>sitios disponibles</strong></label>
+        <select class="custom-select" name="nombressitios">
+            
+            <option value="El encanto">El encanto</option>
+            <option value="Cascada anayacito">Cascada anayacito</option>
+            <option value="Parque los picachos">Parque los picachos</option>
+            <option value="Las dalias">Las dalias</option>
+            <option value="Reserva el danubio">Reserva el danubio</option>
+            <option value="Cueva los guacharos">Cueva los guacharos</option>
+            <option value="Cañon aracuara">Cañon aracuara</option>
+            <option value="Balneario las pailas">Balneario las pailas</option>
+            <option value="Santuario Divino niño">Santuario Divino niño</option>
+
+            <option selected disabled value>Elige tu sitio</option>
+        </select>
 
 
-    <!-- <label for="hora" class="formulario__label">Indica la hora </label>
-        <input id="hora" type="time" class="formulario__input" min="07:00" max="21:00" step="3600" required>
-         -->
-
-    <button  id="btnagregar" class="formulario__submit" type="submit">Enviar </button>
+    <button id="btnagregar" class="formulario__submit" type="submit">Enviar </button>
 
 </form>
+
+
+{{!-- ------------------------------- --}}
+
+
+  {{!-- --------------------------------------- --}}
+
+{{>footer}}
