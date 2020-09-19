@@ -54,6 +54,9 @@ controlador.formulario = async (req, res) => {
 controlador.admin = async (req, res) => {
     res.render('./admin')
 }
+controlador.contactos = (req, res) => {
+    res.render('./contactoss')
+}
 //-------------------------------------------------------
 // AGREGANDO SITIOS Y AGENDAS
 
@@ -75,9 +78,7 @@ controlador.agregarsitios = async (req, res) => {
         sitiosagregados: await leersitios()
     });
 }
-controlador.contactos = (req, res) => {
-    res.render('./maps')
-}
+
 
 //post
 controlador.agregaragenda = async (req, res) => {
@@ -104,15 +105,15 @@ controlador.agregaragenda = async (req, res) => {
 }
 
 
-controlador.agregarinquietudes = async (req, res) => {
+controlador.agregarinquietudes =  (req, res) => {
     console.log(req.body);
-    var nombre = req.body.nombre;
-    var email = req.body.email;
-    var text = req.body.text;
+    var nom = req.body.nom;
+    var correo = req.body.correo;
+    var inquietud = req.body.inquietud;
     db.collection("inquietudes").add({
-        nombres: nombre,
-        emails: email,
-        texts: text
+        name: nom,
+        email: correo,
+        inqui: inquietud
     })
         .then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
@@ -120,10 +121,9 @@ controlador.agregarinquietudes = async (req, res) => {
         .catch((error) => {
             console.error("Error: ", error);
         });
-        res.render('./maps')
+        res.redirect('/')
     }
-//     res.redirect("./maps");
-// }
+
 //LEER SITIOS Y AGENDAS
 
 const leersitios = () => {
