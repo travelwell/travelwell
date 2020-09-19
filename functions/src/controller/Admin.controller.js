@@ -33,16 +33,17 @@ controlador.agenda = async (req, res) => {
     })
 }
 
- controlador.paquetes = async (req, res) => {
-     res.render('./paquetes',{
-        sitiosagendados: await  leersitios2()
+
+controlador.paquetes = async (req, res) => {
+    res.render('./paquetes', {
+        sitiosagendados: await leersitios2()
     })
- }
+}
 
 //get
-controlador.admin2 = async(req,res)=>{
-    res.render('./admin2',{
-        sitiosagendados: await  leersitios2()
+controlador.admin2 = async (req, res) => {
+    res.render('./admin2', {
+        sitiosagendados: await leersitios2()
     })
 }
 //get
@@ -58,8 +59,8 @@ controlador.admin = async (req, res) => {
 
 controlador.agregarsitios = async (req, res) => {
     console.log(req.body);
-     var nombre = req.body.nombre;
-     var descripcion = req.body.descripcion;
+    var nombre = req.body.nombre;
+    var descripcion = req.body.descripcion;
     db.collection("sitiosagregados").add({
         nombres: nombre,
         descripciones: descripcion
@@ -70,21 +71,25 @@ controlador.agregarsitios = async (req, res) => {
         .catch((error) => {
             console.error("Error: ", error);
         });
-     res.render("./admin", {
+    res.render("./admin", {
         sitiosagregados: await leersitios()
-     });
+    });
 }
+controlador.contactos = (req, res) => {
+    res.render('./maps')
+}
+
 //post
 controlador.agregaragenda = async (req, res) => {
     console.log(req.body);
-    var nombres=req.body.nombres;
+    var nombres = req.body.nombres;
     var telefonos = req.body.telefonos;
     var correos = req.body.correos;
-    var nombressitios= req.body.nombressitios;
+    var nombressitios = req.body.nombressitios;
 
     db.collection("sitiosagendados").add({
-        nombre :nombres,
-        telefono:telefonos,
+        nombre: nombres,
+        telefono: telefonos,
         correo: correos,
         nombresitio: nombressitios
     })
@@ -92,18 +97,39 @@ controlador.agregaragenda = async (req, res) => {
             console.log("Document written with ID: ", docRef.id);
         })
         .catch((error) => {
-            console.error("Error: ", error);           
+            console.error("Error: ", error);
         });
-        //aqui podemos cambiar de vista
-         res.redirect("./paquetes");
+    //aqui podemos cambiar de vista
+    res.redirect("./paquetes");
 }
 
+
+controlador.agregarinquietudes = async (req, res) => {
+    console.log(req.body);
+    var nombre = req.body.nombre;
+    var email = req.body.email;
+    var text = req.body.text;
+    db.collection("inquietudes").add({
+        nombres: nombre,
+        emails: email,
+        texts: text
+    })
+        .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch((error) => {
+            console.error("Error: ", error);
+        });
+        res.render('./maps')
+    }
+//     res.redirect("./maps");
+// }
 //LEER SITIOS Y AGENDAS
 
 const leersitios = () => {
     return new Promise(resolve => {
         let listasitios = [];
-       db.collection("sitiosagregados").get()
+        db.collection("sitiosagregados").get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     listasitios.push(doc.data())
@@ -159,7 +185,7 @@ controlador.registraru = (req, res) => {
 
 controlador.loginn = (req, res) => {
     console.log(req.body);
-   auth.signInWithEmailAndPassword(req.body.email, req.body.contra)
+    auth.signInWithEmailAndPassword(req.body.email, req.body.contra)
         .then(async () => {
             res.render("./admin", {
                 sitiosagregados: await leersitios()
@@ -183,5 +209,6 @@ controlador.cerrarsesion = (req, res) => {
 
 
 
-module.exports = controlador;
 
+
+module.exports = controlador;

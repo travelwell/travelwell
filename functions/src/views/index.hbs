@@ -1,4 +1,21 @@
+<style>
+    a:link {
+        text-decoration: none;
+    }
 
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a:active {
+        text-decoration: underline;
+    }
+    }
+</style>
 {{>headerprincipal}}
 <section class="categorias">
     <div class="contenedor">
@@ -6,29 +23,29 @@
 
 
         <div>
-            <form method="POST" action="./maps">
-                <button onclick="alertas()" type="submit" class="btn btn-primary" id="Descubre">
-                    <strong>Descubre</strong>
-                    <br> ver mapa interactivo con lugares a descubrir
+            {{!-- <form method="POST" action="./maps"> --}}
+            <button onclick="alertas()" type="submit" class="btn btn-primary" id="Descubre">
+                <a href="https://travelwell-eeb71.web.app/"><strong>Descubre</strong></a>
+                <br> ver mapa interactivo con lugares a descubrir
+            </button>
+            {{!-- </form> --}}
+        </div>
+
+        <div>
+            <form method="POST" action="./agenda">
+                <button onclick="abriragenda()" action="./agenda" type="submit" class="btn btn-primary"
+                    id="Agenda"><strong> <a href="./agendas"></a>
+                        sitios</strong>
+                    <br> Observa los sitios que hemos encontrado como posibles destinos a tu viaje
                 </button>
             </form>
         </div>
 
         <div>
-            <form method="POST" action="./agenda">
-            <button  onclick="abriragenda()" action="./agenda" type="submit" class="btn btn-primary" id="Agenda"><strong> <a href="./agendas"></a>
-                    sitios</strong>
-                <br> Observa los sitios que hemos encontrado como posibles destinos a tu viaje
-            </button>
-            </form>
-        </div>
-
-        <div>
             <form method="POST" action="./paquetes">
-            <button onclick="" type="submit" class="btn btn-primary"
-                id="Paquetes"><strong>Agendas</strong>
-                <br> Administra tiempo y recursos con la agenda interactiva
-            </button>
+                <button onclick="" type="submit" class="btn btn-primary" id="Paquetes"><strong>Agendas</strong>
+                    <br> Administra tiempo y recursos con la agenda interactiva
+                </button>
             </form>
         </div>
 
@@ -38,6 +55,6 @@
 </section>
 
 {{>registrar}}
-  
+
 
 {{>footer}}

@@ -7,6 +7,7 @@
     /* estos es para especificar los altos y anchos de acuerdo el navegador */
 }
 
+
 #map {
 
     background: white;
@@ -231,7 +232,17 @@ margin-bottom: 20px;
     border-radius: 5%;
     box-shadow: 7px 13px 37px rgb(197, 189, 189);
 }
-.formulariologin  input 
+.formulariologin  input  
+{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-size: 20px;
+
+
+}
+.areacontacto
 {
     border: 2px solid black;
     border-radius: 5px;

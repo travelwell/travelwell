@@ -23,7 +23,7 @@ router.get('/formulario',controlador.formulario);
 router.post('/formulario',controlador.agregaragenda);
 
  router.get('/paquetes',controlador.paquetes);
-// // router.post('/paquetes',controlador.guardar);
+ router.post('/paquetes',controlador.paquetes);
 
 router.get('/admin', controlador.admin);
 // aqui llamamos en el metodo post en admin agregarsitios
@@ -46,5 +46,7 @@ router.post('/logina', controlador.loginn);
  router.post('/cerrarsesion',controlador.cerrarsesion);
  router.get('/cerrarsesion',controlador.cerrarsesion);
 
+router.post  ('/contactos',controlador.agregarinquietudes);
+router.get  ('/contactos',controlador.contactos);
 
 module.exports = router;
